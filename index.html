@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+
+		<title>Frontend Mentor | Rock, Paper, Scissors</title>
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+	<body>
+		<header class="header">
+			<div class="header-container">
+				<div class="logo">
+					<img src="./images/logo.svg" alt="" />
+				</div>
+				<div class="score">
+					<h6>Score</h6>
+					<p id="score">0</p>
+				</div>
+			</div>
+		</header>
+
+		<section class="step1" id="step1">
+			<div class="triangle">
+				<div class="rock" onclick="pickOne('rock')">
+					<img src="./images/icon-rock.svg" alt="rock" />
+				</div>
+				<div class="paper" onclick="pickOne('paper')">
+					<img src="./images/icon-paper.svg" alt="paper" />
+				</div>
+				<div class="scissors" onclick="pickOne('scissors')">
+					<img src="./images/icon-scissors.svg" alt="scissors" />
+				</div>
+			</div>
+		</section>
+
+		<section class="step2" id="step2">
+			<div class="container">
+				<div class="you-picked">
+					<h3>You Picked</h3>
+					<div class="you-picked-container" id="you-picked-container"></div>
+				</div>
+				<div class="house-picked">
+					<h3>The House Picked</h3>
+					<div class="house-picked-container" id="house-picked-container">
+						<span class="house-selecting" id="house-selecting"></span>
+					</div>
+				</div>
+				<div class="result" id="result">
+					<h2>You Lose</h2>
+					<button class="again" onclick="playAgain()">Play Again</button>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<button class="rules" onclick="openModal()">rules</button>
+		</footer>
+		<div class="modal" id="modal">
+			<div class="close">
+				<img src="./images/icon-close.svg" alt="" onclick="closeModal()" />
+			</div>
+			<div class="rule">
+				<img src="./images/image-rules.svg" alt="" />
+			</div>
+		</div>
+		<img src="./images/wingif.gif" alt="win" id="wingif" />
+		<script src="./js/index.js"></script>
+	</body>
+</html>

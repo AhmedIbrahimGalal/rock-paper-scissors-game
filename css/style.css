@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+body {
+	margin: 0;
+	font-family: "Barlow Semi Condensed", sans-serif;
+	font-size: 16px;
+	background: radial-gradient(
+		circle at center,
+		hsl(214, 47%, 23%),
+		hsl(237, 49%, 15%)
+	);
+	overflow-x: hidden;
+}
+* {
+	box-sizing: border-box;
+}
+
+/* header */
+.header {
+	padding: 2rem 1rem;
+	display: flex;
+	justify-content: center;
+}
+.header .header-container {
+	width: 60%;
+	border: 2px solid hsl(217, 16%, 45%);
+	border-radius: 1rem;
+	display: flex;
+	padding: 1rem;
+	justify-content: space-between;
+}
+.header .header-container .score {
+	width: 6rem;
+	background-color: #fff;
+	border-radius: 0.5rem;
+}
+.header .header-container .score h6 {
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	color: hsl(229, 64%, 46%);
+	margin: 0;
+	margin-bottom: 0.2rem;
+	text-align: center;
+	padding-top: 1rem;
+}
+.header .header-container .score p {
+	color: hsl(229, 25%, 31%);
+	margin: 0;
+	text-align: center;
+	font-size: 3rem;
+}
+.step1,
+.step2 {
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	min-height: 350px;
+	margin-top: 2rem;
+}
+.step2 {
+	display: none;
+}
+.step1 .triangle {
+	width: 50%;
+	background: url(../images/bg-triangle.svg) no-repeat center;
+	position: relative;
+}
+.rock,
+.paper,
+.scissors {
+	width: fit-content;
+	background: #fff;
+	width: 8rem;
+	height: 8rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+}
+.rock {
+	background: radial-gradient(
+		circle at center,
+		#fff 50%,
+		hsl(349, 71%, 52%) 20%,
+		hsl(349, 70%, 56%) 30%
+	);
+}
+.paper {
+	background: radial-gradient(
+		circle at center,
+		#fff 50%,
+		hsl(230, 89%, 62%) 20%,
+		hsl(230, 89%, 65%) 30%
+	);
+}
+.scissors {
+	background: radial-gradient(
+		circle at center,
+		#fff 50%,
+		hsl(39, 89%, 49%) 20%,
+		hsl(40, 84%, 53%) 30%
+	);
+}
+.step1 .rock {
+	position: absolute;
+	bottom: 20px;
+	left: 210px;
+	cursor: pointer;
+}
+.step1 .paper {
+	position: absolute;
+	top: -10px;
+	left: 100px;
+	cursor: pointer;
+}
+.step1 .scissors {
+	position: absolute;
+	top: -10px;
+	right: 100px;
+	cursor: pointer;
+}
+
+.step2 .container {
+	width: 60%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.step2 .container .you-picked,
+.step2 .container .house-picked {
+	display: flex;
+	flex-direction: column;
+	width: 25%;
+}
+.step2 .container .house-picked {
+	order: 3;
+}
+.step2 .container .you-picked h3,
+.step2 .container .house-picked h3 {
+	color: #fff;
+	text-align: center;
+	letter-spacing: 2px;
+	font-size: 1.1rem;
+}
+.step2 .container .you-picked .you-picked-container,
+.step2 .container .house-picked .house-picked-container {
+	min-height: 10rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.step2 .container .house-picked .house-selecting {
+	height: 8rem;
+	width: 8rem;
+	border-radius: 50%;
+	background-color: #22222247;
+	display: block;
+	margin: auto;
+	animation: house-selecting 1s ease-in-out 0.1s infinite;
+}
+.step2 .container .result {
+	width: 25%;
+	padding: 1rem;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.step2 .container .result h2 {
+	font-size: 1.8rem;
+	text-transform: uppercase;
+	color: #fff;
+	letter-spacing: 2px;
+	margin: 0;
+	margin-bottom: 0.2rem;
+}
+.step2 .container .result button {
+	width: 8rem;
+	height: 2rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-weight: 700;
+	border: none;
+	border-radius: 0.4rem;
+	color: hsl(229, 25%, 31%);
+	cursor: pointer;
+}
+footer {
+	min-height: 3rem;
+	display: flex;
+	justify-content: flex-end;
+	padding: 0 1rem;
+}
+footer .rules {
+	width: 5rem;
+	height: 2rem;
+	border: 2px solid hsl(217, 16%, 45%);
+	border-radius: 0.5rem;
+	background-color: transparent;
+	color: #fff;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-size: 0.7rem;
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+.modal {
+	width: 100vw;
+	height: 41rem;
+	background-color: #fff;
+	position: absolute;
+	top: 0;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+}
+.modal .close {
+	margin: 2rem 7rem 10rem 2rem;
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+}
+.modal .close img {
+	cursor: pointer;
+}
+#wingif {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	display: none;
+}
+@media (max-width: 375px) {
+	.header {
+		justify-content: unset;
+	}
+	.header .header-container {
+		width: 100%;
+	}
+
+	.step1 .triangle {
+		background-size: 250px 200px;
+		width: 100%;
+	}
+
+	.step1 .rock {
+		bottom: 0;
+		left: 110px;
+	}
+	.step1 .paper {
+		top: -10px;
+		left: 0px;
+	}
+	.step1 .scissors {
+		top: -10px;
+		right: 0;
+	}
+	.step2 .container {
+		width: 100%;
+	}
+	.step2 .container .you-picked h3,
+	.step2 .container .house-picked h3 {
+		order: 2;
+		font-size: 1rem;
+	}
+	.step2 .container .you-picked {
+		width: 50%;
+	}
+	.step2 .container .house-picked {
+		order: 2;
+		width: 50%;
+	}
+	.step2 .container .result {
+		order: 3;
+		width: 100%;
+	}
+	.step2 .container .result h2 {
+		font-size: 3.1rem;
+	}
+	.step2 .container .result button {
+		width: 11rem;
+	}
+}
+
+@keyframes house-selecting {
+	0% {
+		height: 8rem;
+		width: 8rem;
+	}
+	50% {
+		height: 4rem;
+		width: 4rem;
+	}
+	100% {
+		height: 8rem;
+		width: 8rem;
+	}
+}
